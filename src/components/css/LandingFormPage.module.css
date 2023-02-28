@@ -1,0 +1,36 @@
+.form {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex: 1;
+    flex-direction: column;
+    width:max-content;
+
+}
+.pagi {
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    flex: 1;
+    flex-direction: column;
+    width:fit-content;
+    
+    border: 1px solid #e9ecef;
+    margin-top: 16px;
+}
+h1 {
+    margin: 5px 0px;
+    font-size: 1.8em;
+}
+
+p {
+    margin: 5px 0px;
+    font-size: small;
+}
+
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+}

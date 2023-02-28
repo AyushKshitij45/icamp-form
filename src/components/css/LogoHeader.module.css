@@ -1,0 +1,22 @@
+.logoBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+
+  height: 10vh;
+}
+
+.logo {
+  height: 25px;
+  width: 25px;
+  padding: 5px;
+}
+
+.fontlogo {
+  color: #ffffff;
+  font-size: x-large;
+  margin: 0;
+}
