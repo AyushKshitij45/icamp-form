@@ -7,6 +7,9 @@ function UsageForm() {
   const insertName = (event) => {
     setFormData((prevData) => ({ ...prevData, Domains: event.target.value }));
   };
+  const insertSkills = (event) => {
+    setFormData((prevData) => ({ ...prevData, Skills: event.target.value }));
+  };
   const insertMinD = (event) => {
     setFormData((prevData) => ({ ...prevData, MinD: event.target.value }));
   };
@@ -37,9 +40,20 @@ function UsageForm() {
         <input
           className="inputField"
           type="text"
-          placeholder="Name"
+          placeholder="ex: Tech, Design"
           onChange={insertName}
           value={formData.Domains}
+        ></input>
+      </span>
+
+      <span className={classes.container}>
+        <p>Skills Required</p>
+        <input
+          className="inputField"
+          type="text"
+          placeholder="ex: Javascript, C++"
+          onChange={insertSkills}
+          value={formData.Skills}
         ></input>
       </span>
 
@@ -103,7 +117,7 @@ function UsageForm() {
         <input
           className="inputField"
           type="text"
-          placeholder="Name"
+          placeholder="Perks"
           onChange={insertPerks}
           value={formData.Perks}
         ></input>
@@ -114,7 +128,7 @@ function UsageForm() {
         <input
           className="inputField"
           type="text"
-          placeholder="Name"
+          placeholder="Online/Offline"
           onChange={insertMode}
           value={formData.Mode}
         ></input>

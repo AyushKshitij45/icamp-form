@@ -3,15 +3,15 @@ import FormContext from "./form-context";
 
 function FormProvider({ children }) {
   const defaultDataState = {
-    Fullname: "",
-    DisplayName: "",
+    Companyname: "",
+    Websitename: "",
     WorkspaceName: "",
     WorkspaceURL: "",
     usage: "",
   };
   const defaultValidationState = {
-    Fullname: true,
-    DisplayName: true,
+    Companyname: true,
+    We: true,
     WorkspaceName: true,
     usage: true
   };

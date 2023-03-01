@@ -43,7 +43,10 @@ function LandingFormPage() {
             "email":`${formData.MailId}`
           },
           "internshipDetails": {
-            "domains":`${formData.Domains}`
+            "domains":`${formData.Domains}`,
+            "skills":`${formData.Skills}`,
+            "duration" : {"min": `${formData.MinD}`, "max": `${formData.MaxD}`},
+            "stipend" : {"min": `${formData.MinS}`, "max": `${formData.MaxS}`}
           },
           additionalPerks: `${formData.Perks}`,
           mode: `${formData.Mode}`

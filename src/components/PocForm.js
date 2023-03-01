@@ -31,7 +31,7 @@ function PocForm() {
         <input
           className="inputField"
           type="text"
-          placeholder="Name"
+          placeholder="ex: John Doe"
           onChange={insertPocName}
           value={formData.PocName}
         ></input>
@@ -58,8 +58,8 @@ function PocForm() {
         <p>Mail Id</p>
         <input
           className="inputField"
-          type="url"
-          placeholder="Mail Id"
+          type="text"
+          placeholder="poc@gmail.com"
           onChange={insertMailId}
           value={formData.MailId}
         ></input>
