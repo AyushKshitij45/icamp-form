@@ -49,7 +49,7 @@ function PocForm() {
             type="tel"
             placeholder="1234567890"
             onChange={insertContactNumber}
-          value={formData.ContactNumber}
+            value={formData.ContactNumber}
           ></input>
         </section>
       </span>

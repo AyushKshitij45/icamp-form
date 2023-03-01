@@ -12,7 +12,7 @@ function CongratzPage() {
       <CheckCircleIcon className={classes.bigIcon}/>
       <span className={`${classes.container} ${classes.headings}`}>
         <h1>Congratulations, {formData.Fullname}!</h1>
-        <p>You have completed onboarding, you can start using the Eden!</p>
+        <p>You have completed onboarding, you can start using the I-Camp!</p>
       </span>
     </>
   );

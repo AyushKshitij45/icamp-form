@@ -16,9 +16,9 @@ function CompanyForm() {
     event.target.value === '' ? setValidation(prevData => ({...prevData, Websitename:false})) : setValidation(prevData => (({...prevData, Websitename:true})));
   }
 
-  const displayNameHandler = (event) => {
-    setFormData(prevData => ({...prevData, DisplayName:event.target.value}));
-    event.target.value === '' ? setValidation(prevData => ({...prevData, DisplayName:false})) : setValidation(prevData => ({...prevData, Com:true}));
+  const companyLocationHandler = (event) => {
+    setFormData(prevData => ({...prevData, Companylocation:event.target.value}));
+    event.target.value === '' ? setValidation(prevData => ({...prevData, Companylocation:false})) : setValidation(prevData => ({...prevData, Com:true}));
   }
 
 
@@ -42,7 +42,7 @@ function CompanyForm() {
 
       <span className={classes.container}>
         <p>Company Location</p>
-        <input className="inputField" type="text" placeholder="Company Location" onChange={displayNameHandler} value={formData.DisplayName} />
+        <input className="inputField" type="text" placeholder="Company Location" onChange={companyLocationHandler} value={formData.Companylocation} />
       </span>
 
     </>

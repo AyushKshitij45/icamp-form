@@ -5,7 +5,7 @@ import FormContext from "../store/form-context";
 function UsageForm() {
   const { formData, setFormData } = useContext(FormContext);
   const insertName = (event) => {
-    setFormData((prevData) => ({ ...prevData, Name: event.target.value }));
+    setFormData((prevData) => ({ ...prevData, Domains: event.target.value }));
   };
   const insertMinD = (event) => {
     setFormData((prevData) => ({ ...prevData, MinD: event.target.value }));
@@ -39,7 +39,7 @@ function UsageForm() {
           type="text"
           placeholder="Name"
           onChange={insertName}
-          value={formData.Name}
+          value={formData.Domains}
         ></input>
       </span>
 
