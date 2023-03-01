@@ -5,15 +5,14 @@ function FormProvider({ children }) {
   const defaultDataState = {
     Companyname: "",
     Websitename: "",
-    WorkspaceName: "",
-    WorkspaceURL: "",
-    usage: "",
+    PocName: "",
+    MailId: ""
   };
   const defaultValidationState = {
-    Companyname: true,
-    We: true,
-    WorkspaceName: true,
-    usage: true
+    Companyname: false,
+    Websitename: false,
+    PocName: false,
+    MailId: true
   };
   const [page, setPage] = useState(1);
   const [finalData, setFinalData] = useState([]);

@@ -18,7 +18,7 @@ function CompanyForm() {
 
   const companyLocationHandler = (event) => {
     setFormData(prevData => ({...prevData, Companylocation:event.target.value}));
-    event.target.value === '' ? setValidation(prevData => ({...prevData, Companylocation:false})) : setValidation(prevData => ({...prevData, Com:true}));
+    event.target.value === '' ? setValidation(prevData => ({...prevData, Companylocation:false})) : setValidation(prevData => ({...prevData, Companylocation:true}));
   }
 
 
