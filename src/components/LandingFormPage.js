@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import {useState} from "react"
 import classes from "./css/LandingFormPage.module.css";
 import CompanyForm from "./CompanyForm";
 import PocForm from "./PocForm";
@@ -9,7 +8,7 @@ import FormContext from "../store/form-context";
 import axios from "axios";
 
 function LandingFormPage() {
-  const [error, setError] = useState(null);
+  
   var customConfig = {
     headers: {
     'Content-Type': 'application/json'
@@ -32,7 +31,7 @@ function LandingFormPage() {
       setCurrentPage(page + 1);
     } else if (page === numOfPages - 1) {     // checks if in 2nd last page, all the mandatory fields are filled or not
       if (validate(validation)) {
-        
+        setCurrentPage(page + 1);
         console.log(formData);
         var data = JSON.stringify({
           "name": `${formData.Companyname}`,
@@ -52,15 +51,7 @@ function LandingFormPage() {
           additionalPerks: `${formData.Perks}`,
           mode: `${formData.Mode}`
         });
-        try{
-          axios.post('https://icamp-backend.onrender.com/api/companies', data, customConfig);
-          setCurrentPage(page + 1);
-        }
-        catch(error){
-          setError(error);
-          alert("There is a problem")
-        }
-
+        axios.post('https://icamp-backend.onrender.com/api/companies', data, customConfig);
         
       } else {
         alert("Your form is incomplete");
