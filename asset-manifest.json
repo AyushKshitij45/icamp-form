@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/icamp-form/static/css/main.8b19a823.css",
+    "main.css": "/icamp-form/static/css/main.89977768.css",
     "main.js": "/icamp-form/static/js/main.f94b4f29.js",
     "static/media/BACKGROUND_Icamp.png": "/icamp-form/static/media/BACKGROUND_Icamp.5459f63cd55e48736a21.png",
     "static/media/logo.png": "/icamp-form/static/media/logo.99d26fe72f743c29bc1b.png",
     "index.html": "/icamp-form/index.html",
-    "main.8b19a823.css.map": "/icamp-form/static/css/main.8b19a823.css.map",
+    "main.89977768.css.map": "/icamp-form/static/css/main.89977768.css.map",
     "main.f94b4f29.js.map": "/icamp-form/static/js/main.f94b4f29.js.map"
   },
   "entrypoints": [
-    "static/css/main.8b19a823.css",
+    "static/css/main.89977768.css",
     "static/js/main.f94b4f29.js"
   ]
 }
