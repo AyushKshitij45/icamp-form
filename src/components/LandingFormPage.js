@@ -21,16 +21,16 @@ function LandingFormPage() {
     formData,
     setFinalData,
     resetDataState,
-    validate,
-    validation,
   } = useContext(FormContext);
   
   
   const pageSet = () => {
-    if (page < numOfPages - 1) {              // jump to next page
+    if (page ===1 && formData.Companyname !== "" && formData.Websitename !== "" && formData.Companylocation !=="") {              // jump to next page
       setCurrentPage(page + 1);
-    } else if (page === numOfPages - 1) {     // checks if in 2nd last page, all the mandatory fields are filled or not
-      if (validate(validation)) {
+    }else if (page === 2 && formData.PocName !== "" && formData.ContactNumber !== "" && formData.MailId !=="") {              // jump to next page
+      setCurrentPage(page + 1);
+    } else if (page === 3) {     // checks if in 2nd last page, all the mandatory fields are filled or not
+      if (formData.Companyname !== "" && formData.Websitename !== "" && formData.Companylocation !=="" && formData.PocName !== "" && formData.ContactNumber !== "" && formData.MailId !=="" && formData.Domains !== "" && formData.Skills !== "" && formData.MinD !=="" && formData.MaxD !=="" && formData.MinS !=="" && formData.MaxS !=="" && formData.Skills !=="" && formData.Mode !=="" && formData.Perks !=="") {
         setCurrentPage(page + 1);
         console.log(formData);
         var data = JSON.stringify({
@@ -51,7 +51,9 @@ function LandingFormPage() {
           additionalPerks: `${formData.Perks}`,
           mode: `${formData.Mode}`
         });
+        
         axios.post('https://icamp-backend.onrender.com/api/companies', data, customConfig);
+        
         
       } else {
         alert("Your form is incomplete");

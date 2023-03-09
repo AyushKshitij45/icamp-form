@@ -12,7 +12,7 @@ function App() {
           <LogoHeader />
           
         </div>
-        <div className="card">
+        <div className="container">
               <PaginateBar />
               <LandingFormPage />
           </div>
