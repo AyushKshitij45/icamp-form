@@ -29,6 +29,14 @@ function UsageForm() {
     setFormData((prevData) => ({ ...prevData, Mode: event.target.value }));
   };
 
+  const options = [
+
+    { label: 'On-stie', value: 'On-site' },
+ 
+    { label: 'Work From Home', value: 'Work-From-Home' },
+ 
+  ];
+
   return (
     <>
       <span className={`${classes.container} ${classes.headings}`}>
@@ -58,7 +66,7 @@ function UsageForm() {
       </span>
 
       <section className={classes.section}>
-        <p>Duration</p>
+        <p>Duration(in months)</p>
       </section>
       <div className={classes.container_row}>
         <span>
@@ -67,6 +75,7 @@ function UsageForm() {
             className={`inputField ${classes.amount}`}
             type="number"
             placeholder="Min Duration"
+            min="1"
             onChange={insertMinD}
             value={formData.MinD}
           ></input>
@@ -77,6 +86,7 @@ function UsageForm() {
             className={`inputField ${classes.amount}`}
             type="number"
             placeholder="Max Duration"
+            min="1"
             onChange={insertMaxD}
             value={formData.MaxD}
           ></input>
@@ -85,7 +95,7 @@ function UsageForm() {
 
 
       <section className={classes.section}>
-        <p>Stipend</p>
+        <p>Stipend(in Rupees)</p>
       </section>
       <div>
         <div className={classes.container_row}>
@@ -96,6 +106,7 @@ function UsageForm() {
               className={`inputField ${classes.amount}`}
               type="number"
               placeholder="Min Stipend"
+              min="3000"
               onChange={insertMinS}
               value={formData.MinS}
             ></input>
@@ -106,6 +117,7 @@ function UsageForm() {
               className={`inputField ${classes.amount}`}
               type="number"
               placeholder="Max Stipend"
+              min="3000"
               onChange={insertMaxS}
               value={formData.MaxS}
             ></input>
@@ -125,15 +137,17 @@ function UsageForm() {
 
       <span className={classes.container}>
         <p>Mode of Internship</p>
-        <input
-          className="inputField"
-          type="text"
-          placeholder="Online/Offline"
-          onChange={insertMode}
-          value={formData.Mode}
-        ></input>
-      </span>
+        <select value={formData.Mode} onChange={insertMode} className="inputField">
 
+          {options.map((option) => (
+
+            <option value={option.value}>{option.label}</option>
+
+          ))}
+
+        </select>
+      </span>
+      
     </>
   );
 }

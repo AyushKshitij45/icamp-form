@@ -30,7 +30,7 @@ function LandingFormPage() {
     }else if (page === 2 && formData.PocName !== "" && formData.ContactNumber !== "" && formData.MailId !=="") {              // jump to next page
       setCurrentPage(page + 1);
     } else if (page === 3) {     // checks if in 2nd last page, all the mandatory fields are filled or not
-      if (formData.Companyname !== "" && formData.Websitename !== "" && formData.Companylocation !=="" && formData.PocName !== "" && formData.ContactNumber !== "" && formData.MailId !=="" && formData.Domains !== "" && formData.Skills !== "" && formData.MinD !=="" && formData.MaxD !=="" && formData.MinS !=="" && formData.MaxS !=="" && formData.Skills !=="" && formData.Mode !=="" && formData.Perks !=="") {
+      if (formData.Companyname !== "" && formData.Websitename !== "" && formData.Companylocation !=="" && formData.PocName !== "" && formData.ContactNumber !== "" && formData.MailId !=="" && formData.Domains !== "" && formData.Skills !== "" && formData.MinD !=="" && formData.MaxD !=="" && formData.MinS !=="" && formData.MaxS !=="" && formData.Skills !=="" && formData.Mode !=="") {
         setCurrentPage(page + 1);
         console.log(formData);
         var data = JSON.stringify({
