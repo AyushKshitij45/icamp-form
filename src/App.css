@@ -8,8 +8,7 @@ body{
   background-image: url("./images/BACKGROUND_Icamp.png");
   background-size:cover;
   background-repeat:no-repeat; /* fallback for old browsers */
-  
-  
+  overflow-x: hidden;
 }
 
 
@@ -23,6 +22,7 @@ body{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 .register{
@@ -38,6 +38,7 @@ body{
   background-color: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
   /* box-shadow: 1px 3px 10px #e9ecef; */
+  overflow-x: hidden;
   
 }
 
@@ -67,6 +68,7 @@ body{
   flex-direction: column;
   box-shadow: 1px 3px 10px #210101;
   margin: 16px;
+  overflow-x: hidden;
 }
 .card {
   
