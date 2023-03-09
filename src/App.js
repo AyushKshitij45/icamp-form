@@ -8,17 +8,16 @@ function App() {
   return (
     <FormProvider>
       <div className="app">
-      <div className="register">
-          <LogoHeader />
+      
+      <div className="card">
+            <LogoHeader />
           
         </div>
         <div className="container">
+              
               <PaginateBar />
               <LandingFormPage />
           </div>
-      <section>
-          
-        </section>
       </div>
     </FormProvider>
   );
