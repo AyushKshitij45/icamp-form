@@ -6,10 +6,11 @@ function LogoHeader() {
   return (
     
       <div className="register">
-        
-          <h1 className={classes.fontlogo}>Internship Camp KIIT</h1>
+
+          <h1 className={classes.fontlogo}>KIIT Entrepreneurship Cell | Internship Camp 2023</h1>
           <img className={classes.logo} src={logo} alt="" />
-          
+      
+      
     </div>
   )
 }

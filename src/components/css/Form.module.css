@@ -23,11 +23,12 @@
   align-items: center;
   max-width: max-content;
   width: 100%;
+  color: #212121;
 }
 
 .headings p {
-  color: white;
-  font-weight: 500;
+  color: #424242;
+  font-weight: 600;
   font-family:sans-serif;
 }
 

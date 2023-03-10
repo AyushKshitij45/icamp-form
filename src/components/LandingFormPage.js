@@ -31,7 +31,7 @@ function LandingFormPage() {
       setCurrentPage(page + 1);
     } else if (page === 3) {     // checks if in 2nd last page, all the mandatory fields are filled or not
       if (formData.Companyname !== "" && formData.Websitename !== "" && formData.Companylocation !=="" && formData.PocName !== "" && formData.ContactNumber !== "" && formData.MailId !=="" && formData.Domains !== "" && formData.Skills !== "" && formData.MinD !=="" && formData.MaxD !=="" && formData.MinS !=="" && formData.MaxS !=="" && formData.Skills !=="" && formData.Mode !=="") {
-        setCurrentPage(page + 1);
+        
         console.log(formData);
         var data = JSON.stringify({
           "name": `${formData.Companyname}`,
@@ -52,8 +52,12 @@ function LandingFormPage() {
           mode: `${formData.Mode}`
         });
         
-        axios.post('https://icamp-backend.onrender.com/api/companies', data, customConfig);
-        
+        axios.post('https://icamp-backend.onrender.com/api/companies', data, customConfig).then(response => { 
+          setCurrentPage(page + 1);
+          console.log(response)
+        }).catch(error => {
+          alert("There was an error, please try again")
+        });
         
       } else {
         alert("Your form is incomplete");
@@ -68,17 +72,19 @@ function LandingFormPage() {
   };
   
   return (
-    <div className={classes.form}>
-      <div className="card">
-        {page === 1 && <CompanyForm />}
-        {page === 2 && <PocForm />}
-        {page === 3 && <UsageForm />}
-        {page === 4 && <CongratzPage />}
-        
+    <div className="outer-container">
+      <div className={classes.form}>
+        <div className="card">
+          {page === 1 && <CompanyForm />}
+          {page === 2 && <PocForm />}
+          {page === 3 && <UsageForm />}
+          {page === 4 && <CongratzPage />}
+          
+        </div>
+        <button className="button" onClick={pageSet}>
+          {page === numOfPages ? `Finish` : `Next`}
+        </button>
       </div>
-      <button className="button" onClick={pageSet}>
-        {page === numOfPages ? `Finish` : `Next`}
-      </button>
     </div>
   );
 }

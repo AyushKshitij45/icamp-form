@@ -31,7 +31,7 @@ function UsageForm() {
 
   const options = [
 
-    { label: 'On-stie', value: 'On-site' },
+    { label: 'On-site', value: 'On-site' },
  
     { label: 'Work From Home', value: 'Work-From-Home' },
  
@@ -41,7 +41,7 @@ function UsageForm() {
     <>
       <span className={`${classes.container} ${classes.headings}`}>
         <h1>Internship Details</h1>
-        <p>We'll streamline your setup experience accordingly.</p>
+        <p>Tell us what you want in an intern.</p>
       </span>
       <span className={classes.container}>
         <p>Domains</p>
@@ -107,6 +107,7 @@ function UsageForm() {
               type="number"
               placeholder="Min Stipend"
               min="3000"
+              defaultValue={3000}
               onChange={insertMinS}
               value={formData.MinS}
             ></input>
@@ -137,7 +138,7 @@ function UsageForm() {
 
       <span className={classes.container}>
         <p>Mode of Internship</p>
-        <select value={formData.Mode} onChange={insertMode} className="inputField">
+        <select value={formData.Mode} onChange={insertMode}>
 
           {options.map((option) => (
 

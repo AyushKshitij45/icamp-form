@@ -21,11 +21,14 @@
 h1 {
     margin: 5px 0px;
     font-size: 1.8em;
+    color: #212121;
 }
 
 p {
     margin: 5px 0px;
     font-size: small;
+    color: #212121;
+    font-weight: 700;
 }
 
 

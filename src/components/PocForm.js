@@ -22,7 +22,7 @@ function PocForm() {
     <>
       <span className={`${classes.container} ${classes.headings}`}>
         <h1>POC(Point of Contact)</h1>
-        <p>You can always create another workspace later.</p>
+        <p>Who can we reach out to?</p>
       </span>
 
 

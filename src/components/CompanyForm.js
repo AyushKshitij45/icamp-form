@@ -30,7 +30,7 @@ function CompanyForm() {
     <>
       <span className={`${classes.container} ${classes.headings}`}>
         <h1>Company Details</h1>
-        <p>You can always change them later.</p>
+        <p>Tell us about your company.</p>
       </span>
       
 

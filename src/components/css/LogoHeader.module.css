@@ -9,9 +9,16 @@
   color: #212121;
   font-size: x-large;
   margin-top: 24px;
+  text-align: center;
 
 }
 
-
+@media screen and (max-width: 615px) {
+  .fontlogo {
+    color: #212121;
+    font-size:medium;
+  } 
+  
+}
   
 
