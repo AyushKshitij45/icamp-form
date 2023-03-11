@@ -6,7 +6,8 @@ function FormProvider({ children }) {
     Companyname: "",
     Websitename: "",
     PocName: "",
-    MailId: ""
+    MailId: "",
+    MinS: "3000"
   };
   const defaultValidationState = {
     Companyname: false,

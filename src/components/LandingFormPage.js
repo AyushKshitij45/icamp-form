@@ -64,7 +64,16 @@ function LandingFormPage() {
           
         }).catch(error => {
           console.log(error,typeof(error));
-          alert(`${error?.response?.data?.error}`)
+          if (error.response.status===500){
+            alert(`${error?.response?.data?.message}`)
+          }
+          else if (error.response.status===400){
+            alert(`${error?.response?.data?.error}`);
+          }
+          else{
+            alert(`${error}`)
+          }
+          
           setButtonText('Next');
           document.getElementById("button").disabled = false;
         });

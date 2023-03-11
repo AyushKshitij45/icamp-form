@@ -7,7 +7,7 @@ function PaginateBar() {
   const buttonEl = [];
   
   for(let i=1; i<=numOfPages;i++) {
-    buttonEl.push(<button key={i} className={`${classes.circularButton} ${i<=page?classes.visited:''}`} onClick={()=>setCurrentPage(i)} disabled={(i===numOfPages && validate(validation)===false) ? true: false}>{i}</button>)
+    buttonEl.push(<button key={i} className={`${classes.circularButton} ${i<=page?classes.visited:''}`} onClick={()=>setCurrentPage(i)} disabled={(i===numOfPages || validate(validation)===false) ? true: false}>{i}</button>)
   }
 
   
