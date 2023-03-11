@@ -63,7 +63,8 @@ function LandingFormPage() {
           document.getElementById("button").disabled = false;
           
         }).catch(error => {
-          alert(`There was an error, please try again ${error}`)
+          console.log(error,typeof(error));
+          alert(`${error?.response?.data?.error}`)
           setButtonText('Next');
           document.getElementById("button").disabled = false;
         });
