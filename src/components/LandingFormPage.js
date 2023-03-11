@@ -6,6 +6,7 @@ import UsageForm from "./UsageForm";
 import CongratzPage from "./CongratzPage";
 import FormContext from "../store/form-context";
 import axios from "axios";
+import { useState } from "react";
 
 function LandingFormPage() {
   
@@ -19,17 +20,18 @@ function LandingFormPage() {
     setCurrentPage,
     numOfPages,
     formData,
-    setFinalData,
-    resetDataState,
+
   } = useContext(FormContext);
   
-  
+  const [buttonText, setButtonText] = useState('Next');
+
   const pageSet = () => {
     if (page ===1 && formData.Companyname !== "" && formData.Websitename !== "" && formData.Companylocation !=="") {              // jump to next page
       setCurrentPage(page + 1);
     }else if (page === 2 && formData.PocName !== "" && formData.ContactNumber !== "" && formData.MailId !=="") {              // jump to next page
       setCurrentPage(page + 1);
-    } else if (page === 3) {     // checks if in 2nd last page, all the mandatory fields are filled or not
+    } else if (page === 3) {  
+         // checks if in 2nd last page, all the mandatory fields are filled or not
       if (formData.Companyname !== "" && formData.Websitename !== "" && formData.Companylocation !=="" && formData.PocName !== "" && formData.ContactNumber !== "" && formData.MailId !=="" && formData.Domains !== "" && formData.Skills !== "" && formData.MinD !=="" && formData.MaxD !=="" && formData.MinS !=="" && formData.MaxS !=="" && formData.Skills !=="" && formData.Mode !=="") {
         
         console.log(formData);
@@ -51,23 +53,26 @@ function LandingFormPage() {
           additionalPerks: `${formData.Perks}`,
           mode: `${formData.Mode}`
         });
+
+        setButtonText('Please Wait...');
+        document.getElementById("button").disabled = true;
         
         axios.post('https://icamp-backend.onrender.com/api/companies', data, customConfig).then(response => { 
+          setButtonText('Redirecting to our Instagram');
           setCurrentPage(page + 1);
-          console.log(response)
+          document.getElementById("button").disabled = false;
+          
         }).catch(error => {
-          alert("There was an error, please try again")
+          alert(`There was an error, please try again ${error}`)
+          setButtonText('Next');
+          document.getElementById("button").disabled = false;
         });
         
       } else {
         alert("Your form is incomplete");
       }
     } else if (page === numOfPages) {         // if we are already in the last page, set the collected data into a new state and reset the form to default.
-      setFinalData(current => [...current, formData]);
-      
-      
-      resetDataState();
-      setCurrentPage(1);
+      document.getElementById("button").disabled = true;
     }
   };
   
@@ -81,9 +86,12 @@ function LandingFormPage() {
           {page === 4 && <CongratzPage />}
           
         </div>
-        <button className="button" onClick={pageSet}>
-          {page === numOfPages ? `Finish` : `Next`}
+        
+          
+        <button className="button" onClick={pageSet} id="button">
+          {buttonText}
         </button>
+          
       </div>
     </div>
   );
